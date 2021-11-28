@@ -230,14 +230,14 @@ def myuranai(input_text):
     return 'あなたの誕生日は？'
   
   if 'name' in frame and 'birthday' and 'name1' not in frame:
-    frame['asking'] = 'name' # 名前をたずねる  
+    frame['asking'] = 'name1' # 名前をたずねる  
     return '相性を占いたい人の名前は？'
   
   if 'name' in frame and 'birthday' and 'name1' and 'birthday1' not in frame:
-    frame['asking'] = 'birthday' # 誕生日をたずねる    
+    frame['asking'] = 'birthday1' # 誕生日をたずねる    
     return '相性を占いたい人の誕生日は？'
 
-  if 'name' in frame and 'birthday' in frame:
+  if 'name' in frame and 'birthday' and 'name1' and 'birthday1' in frame:
     # 占います
     number = hash(frame['birthday']+frame['birthday1']) % 10
     if number > 5:
